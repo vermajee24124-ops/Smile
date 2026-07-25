@@ -1,7 +1,7 @@
 name: Cartoon to Real Video Demo
 
 on:
-  workflow_dispatch: # GitHub UI पर "Run workflow" बटन दबाकर चलाने के लिए
+  workflow_dispatch:
 
 jobs:
   process-video:
@@ -19,7 +19,7 @@ jobs:
       - name: Install System Dependencies (FFmpeg & OpenCV)
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg libgl1-mesa-glx
+          sudo apt-get install -y ffmpeg libgl1
 
       - name: Install Python Libraries
         run: |
@@ -35,4 +35,4 @@ jobs:
         with:
           name: 4K_Real_Converted_Video
           path: output_4k.mp4
-
+          
